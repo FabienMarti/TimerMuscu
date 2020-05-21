@@ -32,15 +32,16 @@
             </nav>
         </header>
         <main>
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Ajouter une série</button>
-            <table class="table table-hover">
+            <table class="table table-hover text-center">
                 <thead>
                     <tr>
                         <th>Nom série</th>
                         <th>Séries</th>
                         <th>Répétitions</th>
                         <th>Temps de pause</th>
+                        <th>Options</th>
+                        <!-- Button trigger modal -->
+                        <th><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Ajouter une série</button></th>
                     </tr>
                 </thead>
                 <tbody id="arrayIncrement">
@@ -82,7 +83,7 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
                         <button type="button" class="btn btn-primary" data-dismiss="modal"
-                            onclick="newSet(setTitle.value, parseInt(sets.value), parseInt(reps.value), parseInt(timer.value), showSets())">Ajouter</button>
+                            onclick="newSet(setTitle.value, parseInt(sets.value), parseInt(reps.value), parseInt(timer.value))">Ajouter</button>
                     </div>
                 </div>
             </div>

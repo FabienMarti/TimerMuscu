@@ -16,7 +16,9 @@ function showSets() {
             '<th scope="row">' + setArray[index].title + '</th>' +
             '<td>' + setArray[index].set + '</td>' +
             '<td>' + setArray[index].rep + '</td>' +
-            '<td>' + setArray[index].timer + ' secondes' + '</td>';
+            '<td>' + setArray[index].timer + ' secondes' + '</td>' +
+            '<td>' + '<button class="btn btn-danger mr-3" type="button" onclick="deleteSet(' + '\'' + setArray[index].title + '\'' + ', ' + 'this.parentNode.parentNode' + ')">Supprimer</button>' +
+            '<button class="btn btn-info ml-3" type="button" onclick="deleteSet(' + '\'' + setArray[index].title + '\'' + ', ' + 'this.parentNode.parentNode' + ')">Modifier</button></td>';
         document.getElementById('arrayIncrement').appendChild(add);
     }
 }
@@ -26,4 +28,15 @@ function newSet(title, sets, reps, timer) {
     console.log(setArray);
     showSets();
 }
-
+function edit() {
+    
+}
+function deleteSet(title, parent) {
+    for (let index = 0; index < setArray.length; index++) {
+        if (setArray[index].title == title) {
+            setArray.splice(index, 1);
+            parent.remove(); 
+        }
+    }
+    console.log(setArray);
+}
