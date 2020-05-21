@@ -34,6 +34,18 @@
         <main>
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Ajouter une série</button>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Nom série</th>
+                        <th>Séries</th>
+                        <th>Répétitions</th>
+                        <th>Temps de pause</th>
+                    </tr>
+                </thead>
+                <tbody id="arrayIncrement">
+                </tbody>
+            </table>
         </main>
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -48,17 +60,17 @@
                     <div class="modal-body">
                         <form>
                             <div class="form-group">
-                                <label for="title">Nom série</label>
-                                <input type="text" class="form-control" id="title" name="title" />
+                                <label for="setTitle">Nom série</label>
+                                <input type="text" class="form-control" id="setTitle" name="setTitle" />
                             </div>
                             <div class="row">
                                 <div class="col">
                                     <label for="sets">Séries</label>
-                                    <input type="text" class="form-control" id="sets" name="sets" />
+                                    <input type="number" class="form-control" id="sets" name="sets" />
                                 </div>
                                 <div class="col">
                                     <label for="reps">Répétitions</label>
-                                    <input type="text" class="form-control" id="reps" name="reps" />
+                                    <input type="number" class="form-control" id="reps" name="reps" />
                                 </div>
                             </div>
                             <div class="form-group">
@@ -69,7 +81,8 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                        <button type="button" class="btn btn-primary">Ajouter</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal"
+                            onclick="newSet(setTitle.value, parseInt(sets.value), parseInt(reps.value), parseInt(timer.value), showSets())">Ajouter</button>
                     </div>
                 </div>
             </div>
